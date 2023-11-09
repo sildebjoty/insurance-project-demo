@@ -11,10 +11,5 @@
   - name: start docker service
     command: sudo systemctl start docker
 
-  - name: stop and remove insureme applicatio
-    docker_container:
-      name: insure-me
-      state: absent
-
   - name: deploy insureme application
-    command: sudo docker run -itd -p 8081:8081 --name insure-me sildebjoty/insurance-project-demo:1.0
+    command: sudo docker run -itd -p 8081:8081 --name insure-me sildebjoty/insurance-project-demo:1.0 --rm insure-me
